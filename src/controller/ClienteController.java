@@ -1,7 +1,7 @@
 package controller;
 
 import model.Cliente;
-import service.ClienteService;
+import Service.ClienteService;
 
 import java.util.Scanner;
 import java.util.List;
