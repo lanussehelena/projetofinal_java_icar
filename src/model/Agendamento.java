@@ -1,9 +1,5 @@
 package model;
 
-import model.Cliente;
-import model.Servico;
-import model.FormaPagamento;
-
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
