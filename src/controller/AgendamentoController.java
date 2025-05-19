@@ -96,6 +96,25 @@ public class AgendamentoController {
             service.agendar(agendamento);
             System.out.println("✅ Serviço \"" + servicoSelecionado.nome + "\" agendado com sucesso.");
         }
+        public void listarAgendamentos() {
+            List<Agendamento> agendamentos = service.listar();
+            System.out.println("\n=== Lista de Agendamentos ===");
+            for (Agendamento a : agendamentos) {
+                a.exibirInformacoes();
+                System.out.println("-------------------------");
+            }
+        }
+
+        public void listarAgendamentosDoCliente(Cliente cliente) {
+            List<Agendamento> agendamentos = service.listar();
+            System.out.println("\n=== Meus Agendamentos ===");
+            for (Agendamento a : agendamentos) {
+                if (a.cliente.equals(cliente)) {
+                    a.exibirInformacoes();
+                    System.out.println("-------------------------");
+                }
+            }
+        }
     }
 }
 
