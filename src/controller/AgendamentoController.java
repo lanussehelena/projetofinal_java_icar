@@ -38,3 +38,28 @@ public class AgendamentoController {
                 System.out.println("Serviço com ID " + id + " não encontrado.");
             }
         }
+        System.out.print("Data do agendamento (formato dd/MM/yyyy): ");
+        String dataStr = scanner.nextLine();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date dataInformada;
+        try {
+            dataInformada = sdf.parse(dataStr);
+            Date hoje = new Date();
+            if (dataInformada.before(hoje)) {
+                System.out.println("Data inválida. Não pode ser anterior à hoje.");
+                return;
+            }
+        } catch (ParseException e) {
+            System.out.println("Formato de data inválido.");
+            return;
+        }
+
+        System.out.print("Horário do agendamento: ");
+        String horario = scanner.nextLine();
+
+        System.out.println("Forma de pagamento:\n1 - Espécie\n2 - Pix\n3 - Crédito\n4 - Débito");
+        int opcao = scanner.nextInt();
+        scanner.nextLine();
+    }
+}
+
