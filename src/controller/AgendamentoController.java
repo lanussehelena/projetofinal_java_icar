@@ -2,16 +2,16 @@ package controller;
 
 import model.Cliente;
 import model.Servico;
-import service.AgendamentoService;
 import model.Agendamento;
 import model.FormaPagamento;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.List;
+import java.util.Scanner;
 
 public class AgendamentoController {
-    private AgendamentoService service = new AgendamentoService();
+    private Service.AgendamentoService service = new Service.AgendamentoService();
     private ServicoController servicoController;
     private Scanner scanner = new Scanner(System.in);
 
