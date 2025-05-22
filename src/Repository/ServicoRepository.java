@@ -1,4 +1,4 @@
-package Repository;
+package repository;
 
 import model.Servico;
 import java.util.ArrayList;

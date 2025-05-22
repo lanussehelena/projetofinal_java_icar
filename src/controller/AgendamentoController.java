@@ -2,16 +2,16 @@ package controller;
 
 import model.Cliente;
 import model.Servico;
+import service.AgendamentoService;
 import model.Agendamento;
 import model.FormaPagamento;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class AgendamentoController {
-    private Service.AgendamentoService service = new Service.AgendamentoService();
+    private AgendamentoService service = new AgendamentoService();
     private ServicoController servicoController;
     private Scanner scanner = new Scanner(System.in);
 
@@ -38,6 +38,7 @@ public class AgendamentoController {
                 System.out.println("Serviço com ID " + id + " não encontrado.");
             }
         }
+
         System.out.print("Data do agendamento (formato dd/MM/yyyy): ");
         String dataStr = scanner.nextLine();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -96,27 +97,26 @@ public class AgendamentoController {
             service.agendar(agendamento);
             System.out.println("✅ Serviço \"" + servicoSelecionado.nome + "\" agendado com sucesso.");
         }
-        public void listarAgendamentos() {
-            List<Agendamento> agendamentos = service.listar();
-            System.out.println("\n=== Lista de Agendamentos ===");
-            for (Agendamento a : agendamentos) {
+    }
+
+
+    public void listarAgendamentos() {
+        List<Agendamento> agendamentos = service.listar();
+        System.out.println("\n=== Lista de Agendamentos ===");
+        for (Agendamento a : agendamentos) {
+            a.exibirInformacoes();
+            System.out.println("-------------------------");
+        }
+    }
+
+    public void listarAgendamentosDoCliente(Cliente cliente) {
+        List<Agendamento> agendamentos = service.listar();
+        System.out.println("\n=== Meus Agendamentos ===");
+        for (Agendamento a : agendamentos) {
+            if (a.cliente.equals(cliente)) {
                 a.exibirInformacoes();
                 System.out.println("-------------------------");
             }
         }
-
-        public void listarAgendamentosDoCliente(Cliente cliente) {
-            List<Agendamento> agendamentos = service.listar();
-            System.out.println("\n=== Meus Agendamentos ===");
-            for (Agendamento a : agendamentos) {
-                if (a.cliente.equals(cliente)) {
-                    a.exibirInformacoes();
-                    System.out.println("-------------------------");
-                }
-            }
-        }
     }
 }
-
-
-

@@ -1,6 +1,6 @@
-package Service;
+package service;
 import model.Avaliacao;
-import Repository.AvaliacaoRepository;
+import repository.AvaliacaoRepository;
 import java.util.List;
 
 
