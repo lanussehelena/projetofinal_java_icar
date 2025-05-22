@@ -1,4 +1,4 @@
-package Repository;
+package repository;
 
 import model.Agendamento;
 import java.util.ArrayList;

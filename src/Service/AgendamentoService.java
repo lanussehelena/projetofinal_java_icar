@@ -1,7 +1,7 @@
-package Service;
+package service;
 
 import model.Agendamento;
-import Repository.AgendamentoRepository;
+import repository.AgendamentoRepository;
 
 import java.util.List;
 

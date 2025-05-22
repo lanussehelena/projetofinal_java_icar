@@ -1,4 +1,4 @@
-package Service;
+package service;
 
 import model.Cliente;
 import repository.ClienteRepository;
