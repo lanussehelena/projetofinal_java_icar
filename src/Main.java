@@ -12,7 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ClienteController clienteController = new ClienteController();
         ServicoController servicoController = new ServicoController();
-        AgendamentoController agendamentoController = new AgendamentoController(servicoController); // ✅ Corrigido
+        AgendamentoController agendamentoController = new AgendamentoController(servicoController);
         AvaliacaoController avaliacaoController = new AvaliacaoController();
 
         servicoController.cadastrarServicosIniciais();
@@ -49,8 +49,8 @@ public class Main {
 
                 switch (opcao) {
                     case 1 -> servicoController.listarServicos();
-                    case 2 -> agendamentoController.agendarMultiplosServicos(clienteLogado); // ✅ agora limpo!
-                    case 3 -> agendamentoController.listarAgendamentosDoCliente(clienteLogado); // ✅ opcional e útil
+                    case 2 -> agendamentoController.agendarMultiplosServicos(clienteLogado);
+                    case 3 -> agendamentoController.listarAgendamentosDoCliente(clienteLogado);
                     case 4 -> {
                         System.out.print("Digite o ID do serviço que deseja avaliar: ");
                         int id = scanner.nextInt();
